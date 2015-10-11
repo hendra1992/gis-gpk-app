@@ -32,6 +32,7 @@
 		// Init the demo DataTables
 		this._createDataTable1();
 		this._createDataTable2();
+                this._createDataTable3();
 	};
 
 	p._createDataTable1 = function() {
@@ -106,7 +107,30 @@
 			}
 		});
 	};
+        
+        p._createDataTable3 = function() {
+		$('#datatable3').DataTable({
+			"dom": 'lCfrtip',
+			"order": [],
+			"colVis": {
+				"buttonText": "Columns",
+				"overlayFade": 0,
+				"align": "right"
+			},
+			"language": {
+				"lengthMenu": '_MENU_ entries per page',
+				"search": '<i class="fa fa-search"></i>',
+				"paginate": {
+					"previous": '<i class="fa fa-angle-left"></i>',
+					"next": '<i class="fa fa-angle-right"></i>'
+				}
+			}
+		});
 
+		$('#datatable3 tbody').on('click', 'tr', function() {
+			$(this).toggleClass('selected');
+		});
+	};
 	// =========================================================================
 	// DETAILS
 	// =========================================================================

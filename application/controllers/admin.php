@@ -14,11 +14,12 @@ class Admin extends CI_Controller {
     public function index() {
         if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
             redirect("index.php/admin/login");
+        } else {
+            $a['page'] = "d_amain";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_dashboard";
+            $this->load->view('admin/aaa', $a);
         }
-
-        $a['page'] = "d_amain";
-
-        $this->load->view('admin/aaa', $a);
     }
 
     public function klas_surat() {

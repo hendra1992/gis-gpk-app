@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<?php
+    $q_instansi = $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
+?>
 <html lang="en">
     <head>
-        <title>Administrator Login</title>
-
+        <title>Login Administrator <?php echo $q_instansi->nama; ?></title>
         <!-- BEGIN META -->
+        <meta name="keywords" content="Sistem Informasi Geografis | PT. Galaxy Prima Karya">
+        <meta name="description" content="Sistem yang menyajikan layanan berupa informasi terkait dengan proses penjualan property di PT. Galaxy Prima Karya">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="your,keywords">
-        <meta name="description" content="Short explanation about this website">
+        
         <!-- END META -->
 
         <!-- BEGIN STYLESHEETS -->
@@ -26,9 +29,6 @@
         <![endif]-->
     </head>
     <body>
-        <?php
-        $q_instansi = $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
-        ?>
         <!-- BEGIN LOGIN SECTION -->
         <div class="container">
             <!--

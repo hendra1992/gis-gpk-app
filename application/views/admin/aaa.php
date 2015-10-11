@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<?php
+    $q_instansi = $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
+    //echo $this->session->userdata('admin_level');
+?>   
 <html lang="en">
     <head>
-        <title>Material Admin - Blank page</title>
-
+        <title>Sistem Informasi Geografis | <?php echo $q_instansi->nama; ?></title>
         <!-- BEGIN META -->
+        <meta name="keywords" content="Sistem Informasi Geografis | PT. Galaxy Prima Karya">
+        <meta name="description" content="Sistem yang menyajikan layanan berupa informasi terkait dengan proses penjualan property di PT. Galaxy Prima Karya">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="your,keywords">
-        <meta name="description" content="Short explanation about this website">
         <!-- END META -->
 
         <!-- BEGIN STYLESHEETS -->
@@ -16,8 +19,10 @@
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/materialadmin.css?1425466319" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/font-awesome.min.css?1422529194" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+        <?php $this->load->view('admin/' . $head); ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom-style.css" />
         <!-- END STYLESHEETS -->
-
+        
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/libs/utils/html5shiv.js?1403934957"></script>
@@ -25,7 +30,10 @@
         <![endif]-->
     </head>
     <body class="menubar-hoverable header-fixed menubar-pin ">
-
+        <?php 
+            $restrict_area = $this->session->userdata('admin_level');
+            $userlogin = $this->session->userdata('admin_nama');
+        ?>
         <!-- BEGIN HEADER-->
         <header id="header" >
             <div class="headerbar">
@@ -35,7 +43,9 @@
                         <li class="header-nav-brand" >
                             <div class="brand-holder">
                                 <a href="#">
-                                    <span class="text-lg text-bold text-primary">PT. Galaxy Prima Karya</span>
+                                    <span class="text-lg text-bold text-primary">
+                                         <?php echo $q_instansi->nama; ?>                                    
+                                    </span>
                                 </a>
                             </div>
                         </li>
@@ -79,8 +89,8 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-header">Options</li>
-                                <li><a href="../../html/pages/login.html">View all messages <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
-                                <li><a href="../../html/pages/login.html">Mark as read <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/pages/login.html">View all messages <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/pages/login.html">Mark as read <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
                             </ul>
                         </li>
                         <li class="dropdown hidden-xs">
@@ -131,8 +141,8 @@
                             </a>
                             <ul class="dropdown-menu animation-dock">
                                 <li class="dropdown-header">Config</li>
-                                <li><a href="../../html/pages/profile.html">My profile</a></li>
-                                <li><a href="../../html/pages/login.html"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+                                <li><a href="http://localhost/materialadmin/html/pages/profile.html">My profile</a></li>
+                                <li><a href="http://localhost/materialadmin/html/pages/login.html"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
                             </ul><!--end .dropdown-menu -->
                         </li><!--end .dropdown -->
                     </ul><!--end .header-nav-profile -->
@@ -154,14 +164,7 @@
 
                 <!-- BEGIN BLANK SECTION -->
                 <section>
-                    <div class="section-header">
-                        <ol class="breadcrumb">
-                            <li><a href="../../html/.html">home</a></li>
-                            <li class="active">Blank page</li>
-                        </ol>
-                    </div><!--end .section-header -->
-                    <div class="section-body">
-                    </div><!--end .section-body -->
+                    <?php $this->load->view('admin/' . $page); ?>
                 </section>
 
                 <!-- BEGIN BLANK SECTION -->
@@ -177,7 +180,7 @@
                         </a>
                     </div>
                     <div class="expanded">
-                        <a href="../../html/dashboards/dashboard.html">
+                        <a href="http://localhost/materialadmin/html/dashboards/dashboard.html">
                             <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
                         </a>
                     </div>
@@ -186,10 +189,9 @@
 
                     <!-- BEGIN MAIN MENU -->
                     <ul id="main-menu" class="gui-controls">
-
                         <!-- BEGIN DASHBOARD -->
                         <li>
-                            <a href="../../html/dashboards/dashboard.html" class="active">
+                            <a href="<?php  echo base_url(); ?>" class="active">
                                 <div class="gui-icon"><i class="md md-home"></i></div>
                                 <span class="title">Dashboard</span>
                             </a>
@@ -204,31 +206,32 @@
                             </a>
                             <!--start submenu -->
                             <ul>
-                                <li><a href="../../html/tables/static.html" ><span class="title">Static Tables</span></a></li>
-                                <li><a href="../../html/tables/dynamic.html" ><span class="title">Dynamic Tables</span></a></li>
-                                <li><a href="../../html/tables/responsive.html" ><span class="title">Responsive Table</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/tables/static.html" ><span class="title">Static Tables</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/tables/dynamic.html" ><span class="title">Dynamic Tables</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/tables/responsive.html" ><span class="title">Responsive Table</span></a></li>
                             </ul><!--end /submenu -->
                         </li><!--end /menu-li -->
                         <!-- END TABLES -->
-
-                        <!-- BEGIN FORMS -->
+                        <?php
+                        if ($restrict_area !== "Super Admin") {
+                        ?>
                         <li class="gui-folder">
                             <a>
                                 <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
                                 <span class="title">Forms</span>
                             </a>
-                            <!--start submenu -->
                             <ul>
-                                <li><a href="../../html/forms/basic.html" ><span class="title">Form basic</span></a></li>
-                                <li><a href="../../html/forms/advanced.html" ><span class="title">Form advanced</span></a></li>
-                                <li><a href="../../html/forms/layouts.html" ><span class="title">Form layouts</span></a></li>
-                                <li><a href="../../html/forms/editors.html" ><span class="title">Editors</span></a></li>
-                                <li><a href="../../html/forms/validation.html" ><span class="title">Form validation</span></a></li>
-                                <li><a href="../../html/forms/wizard.html" ><span class="title">Form wizard</span></a></li>
-                            </ul><!--end /submenu -->
-                        </li><!--end /menu-li -->
-                        <!-- END FORMS -->
-
+                                <li><a href="http://localhost/materialadmin/html/forms/basic.html" ><span class="title">Form basic</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/forms/advanced.html" ><span class="title">Form advanced</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/forms/layouts.html" ><span class="title">Form layouts</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/forms/editors.html" ><span class="title">Editors</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/forms/validation.html" ><span class="title">Form validation</span></a></li>
+                                <li><a href="http://localhost/materialadmin/html/forms/wizard.html" ><span class="title">Form wizard</span></a></li>
+                            </ul>
+                        </li>
+                        <?php
+                        }
+                        ?>
                     </ul><!--end .main-menu -->
                     <!-- END MAIN MENU -->
 
@@ -244,22 +247,7 @@
         </div><!--end #base-->
         <!-- END BASE -->
 
-        <!-- BEGIN JAVASCRIPT -->
-        <script src="<?php echo base_url(); ?>assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/libs/bootstrap/bootstrap.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/libs/spin.js/spin.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/libs/autosize/jquery.autosize.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/App.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppNavigation.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppOffcanvas.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppCard.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppForm.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppNavSearch.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/source/AppVendor.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/core/demo/Demo.js"></script>
-        <!-- END JAVASCRIPT -->
+        <?php $this->load->view('admin/' . $footer); ?>
 
     </body>
 </html>
