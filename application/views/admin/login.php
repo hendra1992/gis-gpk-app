@@ -16,6 +16,7 @@
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/materialadmin.css?1425466319" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/font-awesome.min.css?1422529194" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/login-style.css" />
         <!-- END STYLESHEETS -->
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,75 +25,51 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/libs/utils/respond.min.js?1403934956"></script>
         <![endif]-->
     </head>
-    <body class="menubar-hoverable header-fixed ">
+    <body>
         <?php
         $q_instansi = $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
         ?>
         <!-- BEGIN LOGIN SECTION -->
-        <section class="section-account">
-            <div class="img-backdrop" style="background-image: url('<?php echo base_url(); ?>assets/img/img16.jpg')"></div>
-            <div class="spacer"></div>
-            <div class="card contain-sm style-transparent">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 center-block" style="float: none!important;">
-                            <div class="well" style="padding-top: 0px;">
-                                <br/>
-                                <div class="text-center">
-                                    <!--<span class="text-lg text-bold text-primary">PT. Galaxy Prima Karya<br/>"Login Administrator"</span>-->
-                                    <div style="width: 350px; margin: 0 auto">
-                                        <div>
-                                            <img src="<?php echo base_url(); ?>upload/<?php echo $q_instansi->logo; ?>" class="thumbnail span3" style="display: inline; float: left; width: 80px; height: 80px">
-                                            <h3 style="margin: 5px 0 0.4em 0; font-size: 1.3em; color: #000; padding-top: 20px; padding-right: 25px;"><?php echo $q_instansi->nama; ?></h3>
-                                            <div style="color: #000; font-size: 13px; margin-top: -10px; padding-right: 25px;" class="clearfix"><?php echo $q_instansi->alamat; ?></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <form class="form floating-label" action="<?php echo base_URL(); ?>index.php/admin/do_login" method="post">
-                                    <?php echo $this->session->flashdata("k"); ?>
-                                    <div class="form-group">
-                                        <input type="text" autofocus name="u" required autofocus class="form-control">
-                                        <label for="username">Username</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="p" required class="form-control">
-                                        <label for="password">Password</label>
-                                    </div>
-                                    <div class="form-group" style="display: none!important;">
-                                        <select name="ta" class="form-control" required><option value="">--</option>
-                                            <?php
-                                            for ($i = 2012; $i <= (date('Y')); $i++) {
-                                                if (date('Y') == $i) {
-                                                    echo "<option value='$i' selected>$i</option>";
-                                                } else {
-                                                    echo "<option value='$i'>$i</option>";
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <br/>
-                                    <div class="row">
-                                        <!--
-                                        <div class="col-xs-6 text-left">
-                                            <div class="checkbox checkbox-inline checkbox-styled">
-                                                <label>
-                                                    <input type="checkbox"> <span>Remember me</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        -->
-                                        <div class="col-xs-12">
-                                            <button class="btn btn-accent btn-raised text-right pull-right" name="submit" id="submit" type="submit">Login &nbsp;<i class="fa fa-arrow-circle-right"></i></button>
-                                        </div><!--end .col -->
-                                    </div><!--end .row -->
-                                </form>
-                            </div>
-                        </div>
-                    </div><!--end .row -->
-                </div><!--end .card-body -->
-            </div><!--end .card -->
-        </section>
+        <div class="container">
+            <!--
+            <div class="text-center">
+            -->
+                <!--<span class="text-lg text-bold text-primary">PT. Galaxy Prima Karya<br/>"Login Administrator"</span>-->
+            <!--
+                <div style="width: 350px; margin: 0 auto">
+                    <div>
+                        <img src="<?php echo base_url(); ?>upload/<?php echo $q_instansi->logo; ?>" class="thumbnail span3" style="display: inline; float: left; width: 80px; height: 80px">
+                        <h3 style="margin: 5px 0 0.4em 0; font-size: 1.3em; color: #000; padding-top: 20px; padding-right: 25px;"><?php echo $q_instansi->nama; ?></h3>
+                        <div style="color: #000; font-size: 13px; margin-top: -10px; padding-right: 25px;" class="clearfix"><?php echo $q_instansi->alamat; ?></div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="card card-container">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+                <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" action="<?php echo base_URL(); ?>index.php/admin/do_login" method="POST">
+                    <?php echo $this->session->flashdata("k"); ?>
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="text" autofocus name="u" required autofocus class="form-control" placeholder="Username">
+                    <input type="password" name="p" required class="form-control" placeholder="Password">
+                    <!--
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    -->
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" name="submit" id="submit" type="submit"><i class="fa fa-arrow-circle-right"></i>&nbsp; L O G I N</button>
+                </form><!-- /form -->
+                <!--
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+                -->
+            </div><!-- /card-container -->
+        </div><!-- /container -->
         <!-- END LOGIN SECTION -->
 
         <!-- BEGIN JAVASCRIPT -->
@@ -111,6 +88,52 @@
         <script src="<?php echo base_url(); ?>assets/js/core/source/AppVendor.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/core/demo/Demo.js"></script>
         <!-- END JAVASCRIPT -->
+        <script>
+            $(document).ready(function () {
+                loadProfile();
+            });
 
+            function getLocalProfile(callback) {
+                var profileImgSrc = localStorage.getItem("PROFILE_IMG_SRC");
+                var profileName = localStorage.getItem("PROFILE_NAME");
+                var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
+
+                if (profileName !== null
+                        && profileReAuthEmail !== null
+                        && profileImgSrc !== null) {
+                    callback(profileImgSrc, profileName, profileReAuthEmail);
+                }
+            }
+
+            function loadProfile() {
+                if (!supportsHTML5Storage()) {
+                    return false;
+                }
+                getLocalProfile(function (profileImgSrc, profileName, profileReAuthEmail) {
+                    $("#profile-img").attr("src", profileImgSrc);
+                    $("#profile-name").html(profileName);
+                    $("#reauth-email").html(profileReAuthEmail);
+                    $("#inputEmail").hide();
+                    $("#remember").hide();
+                });
+            }
+            
+            function supportsHTML5Storage() {
+                try {
+                    return 'localStorage' in window && window['localStorage'] !== null;
+                } catch (e) {
+                    return false;
+                }
+            }
+            
+            function testLocalStorageData() {
+                if (!supportsHTML5Storage()) {
+                    return false;
+                }
+                localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120");
+                localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
+                localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
+            }
+        </script>
     </body>
 </html>
