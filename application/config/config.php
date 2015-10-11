@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['base_url']	      = "http://".$_SERVER['SERVER_NAME'].":8081/gis-gpk/";
+$config['base_url']	      = "http://".$_SERVER['SERVER_NAME']."/gis-gpk/";
 $config['index_page']     = '';
 $config['uri_protocol']	  = 'AUTO';
 
