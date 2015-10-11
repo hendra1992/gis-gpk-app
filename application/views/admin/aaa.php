@@ -141,8 +141,8 @@
                             </a>
                             <ul class="dropdown-menu animation-dock">
                                 <li class="dropdown-header">Config</li>
-                                <li><a href="http://localhost/materialadmin/html/pages/profile.html">My profile</a></li>
-                                <li><a href="http://localhost/materialadmin/html/pages/login.html"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+                                <li><a href="#">My profile</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/admin/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
                             </ul><!--end .dropdown-menu -->
                         </li><!--end .dropdown -->
                     </ul><!--end .header-nav-profile -->
@@ -189,54 +189,86 @@
 
                     <!-- BEGIN MAIN MENU -->
                     <ul id="main-menu" class="gui-controls">
-                        <!-- BEGIN DASHBOARD -->
-                        <li>
-                            <a href="<?php  echo base_url(); ?>" class="active">
+                        
+                        <li >
+                            <a href="<?php echo base_url(); ?>index.php/admin">
                                 <div class="gui-icon"><i class="md md-home"></i></div>
-                                <span class="title">Dashboard</span>
+                                <span class="title">Home</span>
                             </a>
-                        </li><!--end /menu-li -->
-                        <!-- END DASHBOARD -->
-
-                        <!-- BEGIN TABLES -->
-                        <li class="gui-folder">
+                        </li>
+                        
+                        <li class="gui-folder ">
                             <a>
-                                <div class="gui-icon"><i class="fa fa-table"></i></div>
-                                <span class="title">Tables</span>
+                                <div class="gui-icon"><i class="fa fa-connectdevelop"></i></div>
+                                <span class="title">Cluster</span>
                             </a>
-                            <!--start submenu -->
                             <ul>
-                                <li><a href="http://localhost/materialadmin/html/tables/static.html" ><span class="title">Static Tables</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/tables/dynamic.html" ><span class="title">Dynamic Tables</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/tables/responsive.html" ><span class="title">Responsive Table</span></a></li>
-                            </ul><!--end /submenu -->
-                        </li><!--end /menu-li -->
-                        <!-- END TABLES -->
+                                <li><a href="#" ><span class="title">Block Category</span></a></li>
+                                <li><a href="#" ><span class="title">Type</span></a></li>
+                                <li><a href="#" ><span class="title">Property Sitemap</span></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="gui-folder ">
+                            <a>
+                                <div class="gui-icon"><i class="fa fa-dollar"></i></div>
+                                <span class="title">Sales</span>
+                            </a>
+                            <ul>
+                                <li><a href="#" ><span class="title">Sitemap</span></a></li>
+                                <li><a href="#" ><span class="title">Sales Data Input</span></a></li>
+                                <li><a href="#" ><span class="title">Payment Data Input</span></a></li>
+                                <li><a href="#" ><span class="title">Sales Data</span></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="">
+                            <a href="<?php echo base_url(); ?>index.php/admin/customers">
+                                <div class="gui-icon"><i class="md md-accessibility"></i></div>
+                                <span class="title">Customers</span>
+                            </a>
+                        </li>
+                        
+                        <li class="gui-folder ">
+                            <a>
+                                <div class="gui-icon"><i class="fa fa-file-text-o"></i></div>
+                                <span class="title">Report</span>
+                            </a>
+                            <ul>
+                                <li><a href="#" ><span class="title">Salesman Sales Report</span></a></li>
+                                <li><a href="#" ><span class="title">Customer Payment Report</span></a></li>
+                                <li><a href="#" ><span class="title">Customer Booking Report</span></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="">
+                            <a href="#">
+                                <div class="gui-icon"><i class="fa fa-history"></i></div>
+                                <span class="title">History Log</span>
+                            </a>
+                        </li>
+                                                
                         <?php
                         if ($restrict_area !== "Super Admin") {
                         ?>
-                        <li class="gui-folder">
+                        <li class="gui-folder ">
                             <a>
-                                <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
-                                <span class="title">Forms</span>
+                                <div class="gui-icon"><i class="md md-account-child"></i></div>
+                                <span class="title">Users</span>
                             </a>
                             <ul>
-                                <li><a href="http://localhost/materialadmin/html/forms/basic.html" ><span class="title">Form basic</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/forms/advanced.html" ><span class="title">Form advanced</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/forms/layouts.html" ><span class="title">Form layouts</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/forms/editors.html" ><span class="title">Editors</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/forms/validation.html" ><span class="title">Form validation</span></a></li>
-                                <li><a href="http://localhost/materialadmin/html/forms/wizard.html" ><span class="title">Form wizard</span></a></li>
+                                <li><a href="#" ><span class="title">Users</span></a></li>
+                                <li><a href="#" ><span class="title">Roles</span></a></li>
                             </ul>
                         </li>
                         <?php
                         }
                         ?>
-                    </ul><!--end .main-menu -->
+                    </ul>
                     <!-- END MAIN MENU -->
 
                     <div class="menubar-foot-panel">
-                        <small class="no-linebreak hidden-folded">
+                        <small class="no-linebreak hidden-folded" style="font-size: 0.8em;">
                             <span class="opacity-75">Copyright &copy; 2015</span> <strong>Cyber Global Tritama</strong>
                         </small>
                     </div>

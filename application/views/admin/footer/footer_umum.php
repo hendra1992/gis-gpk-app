@@ -4,6 +4,9 @@
 <script src="<?php echo base_url(); ?>assets/js/libs/bootstrap/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/libs/spin.js/spin.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/libs/autosize/jquery.autosize.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/libs/DataTables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/core/source/App.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/core/source/AppNavigation.js"></script>
@@ -13,4 +16,5 @@
 <script src="<?php echo base_url(); ?>assets/js/core/source/AppNavSearch.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/core/source/AppVendor.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/core/demo/Demo.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/core/demo/DemoTableDynamic.js"></script>
 <!-- END JAVASCRIPT -->

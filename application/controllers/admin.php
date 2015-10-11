@@ -21,7 +21,17 @@ class Admin extends CI_Controller {
             $this->load->view('admin/aaa', $a);
         }
     }
-
+    
+    public function customers() {
+        if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
+            redirect("index.php/admin/login");
+        }
+        $a['page'] = "form_customers";
+        $a['head'] = "head/head_dashboard";
+        $a['footer'] = "footer/footer_umum";
+        $this->load->view('admin/aaa', $a);
+    }
+    
     public function klas_surat() {
         if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
             redirect("index.php/admin/login");
