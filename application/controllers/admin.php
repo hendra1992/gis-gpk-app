@@ -26,10 +26,39 @@ class Admin extends CI_Controller {
         if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
             redirect("index.php/admin/login");
         }
-        $a['page'] = "form_customers";
-        $a['head'] = "head/head_dashboard";
-        $a['footer'] = "footer/footer_umum";
-        $this->load->view('admin/aaa', $a);
+        $mau_ke = $this->uri->segment(3);
+        $idu = $this->uri->segment(4);
+
+        $cari = addslashes($this->input->post('q'));
+
+        //ambil variabel Postingan
+        $idp = addslashes($this->input->post('idp'));
+        $nama = addslashes($this->input->post('nama'));
+        $uraian = addslashes($this->input->post('uraian'));
+
+        $cari = addslashes($this->input->post('q'));
+
+
+        if ($mau_ke == "cari") {
+            /*
+            $a['data'] = $this->db->query("SELECT * FROM ref_klasifikasi WHERE nama LIKE '%$cari%' OR uraian LIKE '%$cari%' ORDER BY id DESC")->result();
+            $a['page'] = "l_klas_surat";
+            */
+        } else if ($mau_ke == "add") {
+            $a['page'] = "form_add_customer";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        } else if ($mau_ke == "edt") {
+            
+        } else if ($mau_ke == "act_edt") {
+            
+        } else {
+            $a['page'] = "form_customers";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        }
     }
     
     public function klas_surat() {
@@ -79,7 +108,7 @@ class Admin extends CI_Controller {
             $a['data'] = $this->db->query("SELECT * FROM ref_klasifikasi LIMIT $awal, $akhir ")->result();
             $a['page'] = "l_klas_surat";
         }
-
+        
         $this->load->view('admin/aaa', $a);
     }
 
