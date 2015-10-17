@@ -70,6 +70,54 @@ class Admin extends CI_Controller {
         }
     }
     
+    public function type_property() {
+        if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
+            redirect("index.php/admin/login");
+        }
+        $mau_ke = $this->uri->segment(3);
+        $idu = $this->uri->segment(4);
+
+        $cari = addslashes($this->input->post('q'));
+
+        //ambil variabel Postingan
+        $idp = addslashes($this->input->post('idp'));
+        $nama = addslashes($this->input->post('nama'));
+        $uraian = addslashes($this->input->post('uraian'));
+
+        $cari = addslashes($this->input->post('q'));
+
+        if ($mau_ke == "cari") {
+            /*
+            $a['data'] = $this->db->query("SELECT * FROM ref_klasifikasi WHERE nama LIKE '%$cari%' OR uraian LIKE '%$cari%' ORDER BY id DESC")->result();
+            $a['page'] = "l_klas_surat";
+            */
+        } else if ($mau_ke == "add") {
+            $a['page'] = "form_type_prop_add";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        } else if ($mau_ke == "edit") {
+            $a['page'] = "form_type_prop_edt";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        } else if ($mau_ke == "remove") {
+            $a['page'] = "form_block_cat_rmv";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        } else if ($mau_ke == "act_add") {
+            
+        } else if ($mau_ke == "act_edit") {
+            
+        } else {
+            $a['page'] = "form_type_property";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        }
+    }
+    
     public function customers() {
         if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
             redirect("index.php/admin/login");

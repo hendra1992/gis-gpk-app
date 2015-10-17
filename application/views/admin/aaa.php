@@ -204,7 +204,7 @@
                             </a>
                             <ul>
                                 <li><a href="<?php echo base_url(); ?>index.php/admin/block_category" ><span class="title">Block Category</span></a></li>
-                                <li><a href="#" ><span class="title">Type</span></a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/admin/type_property" ><span class="title">Type</span></a></li>
                                 <li><a href="#" ><span class="title">Property Sitemap</span></a></li>
                             </ul>
                         </li>

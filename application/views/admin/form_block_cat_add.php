@@ -10,7 +10,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-light">Block Category</header>
+                    <header class="text-light">Add Block Category</header>
                     <div class="tools">
                         <a class="btn btn-icon-toggle btn-collapse"><i class="fa fa-angle-down"></i></a>
                         <a class="btn btn-icon-toggle btn-close"><i class="md md-close"></i></a>
@@ -38,6 +38,4 @@
             </div>
         </div>
     </div>
-
-    <!-- END MORRIS - STACKED BAR CHART -->
-</div><!--end .section-body -->
+</div>
