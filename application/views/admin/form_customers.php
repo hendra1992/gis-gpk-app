@@ -33,7 +33,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="gradeA">
+                                        <tr>
                                             <td>1</td>
                                             <td>11111</td>
                                             <td>Yahya A</td>
@@ -43,7 +43,7 @@
                                             <td>yahya.buana@gmail.com</td>
                                             <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
-                                        <tr class="gradeA">
+                                        <tr>
                                             <td>2</td>
                                             <td>22222</td>
                                             <td>Yahya B</td>
@@ -53,7 +53,7 @@
                                             <td>yahya.buana@gmail.com</td>
                                             <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
-                                        <tr class="gradeA">
+                                        <tr>
                                             <td>3</td>
                                             <td>33333</td>
                                             <td>Yahya E</td>
@@ -63,7 +63,7 @@
                                             <td>yahya.buana@gmail.com</td>
                                             <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
-                                        <tr class="gradeA">
+                                        <tr>
                                             <td>4</td>
                                             <td>44444</td>
                                             <td>Yahya C</td>
@@ -73,7 +73,7 @@
                                             <td>yahya.buana@gmail.com</td>
                                             <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
-                                        <tr class="gradeA">
+                                        <tr>
                                             <td>5</td>
                                             <td>55555</td>
                                             <td>Yahya D</td>

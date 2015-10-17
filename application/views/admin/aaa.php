@@ -180,7 +180,7 @@
                         </a>
                     </div>
                     <div class="expanded">
-                        <a href="http://localhost/materialadmin/html/dashboards/dashboard.html">
+                        <a href="<?php echo base_url(); ?>index.php/admin">
                             <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
                         </a>
                     </div>
@@ -203,7 +203,7 @@
                                 <span class="title">Cluster</span>
                             </a>
                             <ul>
-                                <li><a href="#" ><span class="title">Block Category</span></a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/admin/block_category" ><span class="title">Block Category</span></a></li>
                                 <li><a href="#" ><span class="title">Type</span></a></li>
                                 <li><a href="#" ><span class="title">Property Sitemap</span></a></li>
                             </ul>
@@ -280,6 +280,14 @@
         <!-- END BASE -->
 
         <?php $this->load->view('admin/' . $footer); ?>
-
+        <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        function checkDelete(){
+            return confirm('Are you sure to delete this data ?');
+        }
+        </script>
     </body>
 </html>
