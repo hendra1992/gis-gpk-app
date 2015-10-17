@@ -44,8 +44,13 @@ class Admin extends CI_Controller {
             $a['data'] = $this->db->query("SELECT * FROM ref_klasifikasi WHERE nama LIKE '%$cari%' OR uraian LIKE '%$cari%' ORDER BY id DESC")->result();
             $a['page'] = "l_klas_surat";
             */
-        } else if ($mau_ke == "add") {
-            $a['page'] = "form_add_customer";
+        } else if ($mau_ke == "det") {
+            $a['page'] = "form_det_customer";
+            $a['head'] = "head/head_dashboard";
+            $a['footer'] = "footer/footer_umum";
+            $this->load->view('admin/aaa', $a);
+        } else if ($mau_ke == "det_payment") {
+            $a['page'] = "form_det_payment";
             $a['head'] = "head/head_dashboard";
             $a['footer'] = "footer/footer_umum";
             $this->load->view('admin/aaa', $a);

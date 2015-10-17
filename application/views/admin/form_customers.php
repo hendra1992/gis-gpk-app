@@ -11,7 +11,6 @@
                 <div class="card-head">
                     <header class="text-light">Data Customers</header>
                     <div class="tools">
-                        <a class="btn btn-primary btn-xs ink-reaction btn-raised" href="<?php echo base_URL(); ?>index.php/admin/customers/add"><i class="md md-person-add"></i>&nbsp;Add Customers</a>
                         <a class="btn btn-icon-toggle btn-collapse"><i class="fa fa-angle-down"></i></a>
                         <a class="btn btn-icon-toggle btn-close"><i class="md md-close"></i></a>
                     </div>
@@ -42,7 +41,7 @@
                                             <td>Jl. Mojopahit 4</td>
                                             <td>08977276411</td>
                                             <td>yahya.buana@gmail.com</td>
-                                            <td><a href="#" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
+                                            <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>2</td>
@@ -52,7 +51,7 @@
                                             <td>Jl. Mojopahit 5</td>
                                             <td>08977276411</td>
                                             <td>yahya.buana@gmail.com</td>
-                                            <td><a href="#" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
+                                            <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>3</td>
@@ -62,7 +61,7 @@
                                             <td>Jl. Mojopahit 3</td>
                                             <td>08977276411</td>
                                             <td>yahya.buana@gmail.com</td>
-                                            <td><a href="#" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
+                                            <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>4</td>
@@ -72,7 +71,7 @@
                                             <td>Jl. Mojopahit 1</td>
                                             <td>08977276411</td>
                                             <td>yahya.buana@gmail.com</td>
-                                            <td><a href="#" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
+                                            <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>5</td>
@@ -82,7 +81,7 @@
                                             <td>Jl. Mojopahit 2</td>
                                             <td>08977276411</td>
                                             <td>yahya.buana@gmail.com</td>
-                                            <td><a href="#" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
+                                            <td><a href="<?php echo base_URL(); ?>index.php/admin/customers/det" class="btn ink-reaction btn-floating-action btn-xs btn-primary center-block" target="_BLANK"><i class="md md-trending-up"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
